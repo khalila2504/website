@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+* {
+  box-sizing: border-box;
+  margin: 0; padding: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  color: transparent;
+  background-color: black;
+}
+
+:active, :hover, :focus {
+  outline: 0!important;
+  outline-offset: 0;
+}
+::before,
+::after {
+  position: absolute;
+  content: "";
+}
+
+.btn-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  max-width: 1000px;
+  margin: 10px auto 35px; 
+  margin-left: 0px;
+}
+
+.btn-holder2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:right;
+  max-width: 1000px;
+  margin: 10px auto 35px; 
+  margin-right: 0px;
+}
+.btn {
+  position: relative;
+  display: inline-block;
+  width: auto; height: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0px 25px 15px;
+  min-width: 100px; 
+}
+  .btn span {         
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    top: 0; left: 0;
+    width: 100%;
+    padding: 10px 30px;
+    transition: 0.3s;
+  }
+
+/*--- btn-3 ---*/
+.btn-3 {
+  padding: 3px;
+}
+.btn-3 span {
+  color: white;
+  background-color: transparent;
+}
+.btn-3::before,
+.btn-3::after {
+  background: transparent;
+  z-index: 2;
+}
+
+/* 14. hover-border-4 */
+.btn.hover-border-4::before,
+.btn.hover-border-4::after {
+  width: 0%; height: 0%;
+  opacity: 0;
+  transition: width 0.2s linear, height 0.15s 0.2s ease-out, opacity 0s 0.35s;
+}
+.btn.hover-border-4::before {
+  bottom: 0; left: -1px;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+}
+.btn.hover-border-4::after {
+  top: 0; right: 0;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+}
+.btn.hover-border-4:hover::before,
+.btn.hover-border-4:hover::after {
+  width: 100%; height: 99%;
+  opacity: 1;
+  transition: width 0.2s 0.15s ease-out, height 0.15s ease-in, opacity 0s;   
+}
+</style>
+
+</head>
+<body>
+    <div class="btn-holder">
+    <button class="btn btn-3 hover-border-4">
+        <span>About.</span>
+    </button>
+    </div>
+    <div class="btn-holder">
+        <button class="btn btn-3 hover-border-4">
+            <span>Home.</span>
+        </button>
+    </div>
+</body>
+</html>
